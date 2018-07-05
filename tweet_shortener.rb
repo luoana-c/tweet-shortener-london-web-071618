@@ -47,11 +47,10 @@ def bulk_tweet_shortener(tweets)
   end
 end
 
-def selective_tweet_shortener(tweets)
-  for tweet in tweets
+def selective_tweet_shortener(tweet)
     if tweet.length > 140 
       new_tweet = word_substituter(tweet)
       return new_tweet
     end
-  end
+  
 end
