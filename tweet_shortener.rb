@@ -41,7 +41,8 @@ end
 
 def bulk_tweet_shortener(tweets)
   for tweet in tweets
-    word_substituter(tweet)
+    new_tweet = word_substituter(tweet)
+    puts new_tweet
   end
   
 end
