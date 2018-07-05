@@ -14,21 +14,28 @@ def dictionary
   
 end
 
+def existsInArray (wordArray, word)
+  for currentWord in wordArray
+    if currentWord == word
+      return true
+    end
+  end
+
+  return false
+end
+
 def word_substituter(tweet)
   tweet_words = tweet.split(" ")
   words_to_change = dictionary.keys
   
-  
-  tweet_words.collect do |word|
-    for i in words_to_change
-      if word == i
-        word = dictionary[i]  
-
-      end
-      
+  new_words = tweet_words.collect do |word|
+    
+    if(existsInArray(words_to_change, word))
+      dictionary[word]
+    else
+      word
     end
-
   end
-  tweet_words.join(" ")
+  new_words.join(" ")
 
 end
